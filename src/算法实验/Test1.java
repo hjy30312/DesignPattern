@@ -33,8 +33,6 @@ public class Test1 {
                 map[x+k+i][y+j] = map[x+i][y+k+j];
             }
         }
-
-
     }
 
     public static void main(String[] args) {
