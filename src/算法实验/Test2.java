@@ -2,6 +2,21 @@ package 算法实验;
 
 import java.util.*;
 
+/**
+ * 测试数据
+ 11
+ 1 4
+ 3 5
+ 0 6
+ 5 7
+ 3 8
+ 5 9
+ 6 10
+ 8 11
+ 8 12
+ 12 14
+ 2 13
+ */
 
 class Arr implements Comparable<Arr>{
 	public int start;
@@ -31,7 +46,6 @@ public class Test2 {
 	 */
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
