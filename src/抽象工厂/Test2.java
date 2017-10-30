@@ -68,6 +68,7 @@ class SouthVegetables implements Vegetables {
 
 
 }
+//黄瓜：具体产品
 class  Cucumber extends SouthVegetables {
 
     @Override
@@ -89,7 +90,7 @@ class NorthVegetables implements Vegetables {
     }
 }
 
-//大蒜
+//大蒜：具体产品
 class Garlic extends NorthVegetables {
     @Override
     public void display(int i) {

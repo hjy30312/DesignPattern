@@ -1,5 +1,6 @@
 package 算法实验;
 
+import java.io.InputStream;
 import java.util.*;
 
 /**
@@ -17,6 +18,7 @@ import java.util.*;
  12 14
  2 13
  */
+
 
 class Arr implements Comparable<Arr>{
 	public int start;

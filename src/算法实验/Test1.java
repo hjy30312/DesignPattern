@@ -40,13 +40,21 @@ public class Test1 {
         int n = sc.nextInt();
         sc.close();
 
+        //因2的幂次方总是最高位为1 其余为0
+        if ((n&(n-1)) != 0) {
+            System.out.println("请输入2的幂次方！");
+            return;
+        }
+
         int[][] map = new int[n][n];
         //赛程表初始化
         for (int i = 0; i < n; i++)
         {
             map[0][i] = i+1;
         }
+
         f(map,0,0,n);
+
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.print(map[i][j] + " ");
