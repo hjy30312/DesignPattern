@@ -1,33 +1,34 @@
-package 算法实验.并查集;
+package 算法实验;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**
  * @author hjy
- * @create 2017/11/01
+ * @create 2017/11/07
  **/
-public class Test2 {
+public class Test3 {
     private static final int MAX = Integer.MAX_VALUE;
-    private static final int N = 505;
+    private static final int N = 105;
     private static int[][] arr = new int[N][N];
     private static int n;
 
-    /**
-     * lowcost[i]表示以i为终点的边的最小权值，
-     * 当lowcost[i]=0说明以i为终点的边
-     * 表示加入了树
-     */
-    private static int[] lowcost = new int[N];
+    public static int prim(int[][] arr , int n) {
 
-    public static void prim() {
-        int[] sum = new int[n];  //最小生成树的各个权
-        int min,k = 0,s=0;
+        int[] lowcost = new int[n+1];
+        int[] mst = new int[n+1];
+        int min, k = 0, count = 0;
+
+        //最小生成树总权值
+        int sum = 0;
+
+        //初始化
         for (int i = 1; i <= n; i++) {
-            lowcost[i] = arr[1][i];    //最初顶点到别点的距离
+            lowcost[i] = arr[1][i];     //最初顶点到别点的距离
         }
+
         for (int i = 1; i <= n; i++) {
             min = MAX;
+            //找出最小边的权值
             for (int j = 1; j <= n; j++) {
                 if (lowcost[j]!=0 && lowcost[j] < min) {
                     min = lowcost[j];
@@ -35,36 +36,32 @@ public class Test2 {
                 }
             }
 
-            sum[s] = lowcost[k];
-            s++;
-            lowcost[k] = 0;
+            //加入
+            mst[count++] = lowcost[k];
+            sum += lowcost[k];
 
             //更新lowcost
+            lowcost[k] = 0;
             for (int j = 1; j <= n; j++) {
-                if ( lowcost[j]!=0 && arr[k][j] < lowcost[j] ) {
+                if ( lowcost[j]!=0 && arr[k][j]<lowcost[j] ) {
                     lowcost[j] = arr[k][j];
                 }
             }
-
         }
-        Arrays.sort(sum);
-        System.out.println(sum[s-1]);
+        return sum;
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-
-        int T = sc.nextInt();
-        for (int t = 0; t < T; t++) {
-            n = sc.nextInt(); //城镇个数
+        int n = sc.nextInt();
+        while (sc.hasNext()) {
             for (int i = 1; i <= n; i++) {
                 for (int j = 1; j <= n; j++) {
                     arr[i][j] = sc.nextInt();
                 }
             }
-            prim();
+            int ans = prim(arr, n);
+            System.out.println(ans);
         }
-
     }
 }
