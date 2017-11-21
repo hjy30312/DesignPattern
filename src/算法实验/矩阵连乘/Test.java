@@ -11,6 +11,13 @@ public class Test {
      */
     static int[][] min_part = new int[count][count];
 
+    /**
+     * 计算矩阵最小乘次数
+     * @param p 保存矩阵行列的数组
+     * @param n 矩阵的个数
+     * @param min_part 保存最小乘次数
+     * @return
+     */
     public static int function(int[] p, int n, int[][]min_part) {
         int j = 0;
 
