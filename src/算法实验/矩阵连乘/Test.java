@@ -15,7 +15,7 @@ public class Test {
      */
     static int[][] min_point = new int[count][count];
 
-    public static int function(int[] p,int n,int[][]min_part,int[][]min_point) {
+    public static int function(int[] p, int n, int[][]min_part, int[][]min_point) {
         int j = 0;
 
         for (int i = 0; i < n; i++) {
