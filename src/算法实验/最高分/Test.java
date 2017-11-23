@@ -3,7 +3,6 @@ package 算法实验.最高分;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 import java.util.StringTokenizer;
 
 /**
@@ -18,6 +17,9 @@ import java.util.StringTokenizer;
  对于每一次询问操作，在一行里面输出最高成绩.
  **/
 public class Test {
+
+
+
     public static int getMax(int start, int end, int[] arr) {
         if (start > end) {
             int temp = start;
@@ -54,17 +56,16 @@ public class Test {
                 if((line=br.readLine())!=null) {
                     st = new StringTokenizer(line);
                     String str = st.nextToken();
+                    int A = Integer.parseInt(st.nextToken());
+                    int B = Integer.parseInt(st.nextToken());
+
                     //询问
                     if ("Q".equals(str)) {
-                        int start = Integer.parseInt(st.nextToken());
-                        int end = Integer.parseInt(st.nextToken());
-                        int ans = getMax(start, end, arr);
+                        int ans = getMax(A, B, arr);
                         System.out.println(ans);
                     } else {
                         //修改
-                        int position = Integer.parseInt(st.nextToken());
-                        int newScore = Integer.parseInt(st.nextToken());
-                        arr[position] = newScore;
+                        arr[A] = B;
                     }
                 }
             }
