@@ -14,6 +14,10 @@ package 算法实验;
  * @author hjy
  * @create 2017/11/23
  **/
+
+
+
+import javax.swing.table.AbstractTableModel;
 public class 首个重复字符 {
 
     public char findFirstRepeat(String A, int n) {
@@ -28,5 +32,6 @@ public class 首个重复字符 {
             }
         }
         return 0;
+
     }
 }
