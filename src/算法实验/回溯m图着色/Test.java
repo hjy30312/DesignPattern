@@ -28,6 +28,12 @@ public class Test {
     static int n;       //顶点数
     static int m;       //最多颜色数
 
+    /**
+     * 判断是否相邻顶点颜色互异
+     * @param k
+     * @param n
+     * @return
+     */
     public static boolean judge(int k, int n) {
         for (int i = 1; i <= n; i++) {
             //先判断是否邻接  再判断颜色是否相同
@@ -38,8 +44,13 @@ public class Test {
         return true;
     }
 
+    /**
+     * DFS：判断上色条件进行减枝，
+     * 通过控制每个点上色的颜色进行判断回溯
+     * @param k
+     */
     public static void graphColor(int k) {
-        if (k > n) {
+        if (k > n) {  //递归结束条件： 满足全部点都上色
             count++;
             return;
         } else {
@@ -71,6 +82,10 @@ public class Test {
         }
 
         graphColor(1);
-        System.out.println(count);
+        if (count != 0) {
+            System.out.println(count);
+        } else {
+            System.out.println("失败");
+        }
     }
 }
