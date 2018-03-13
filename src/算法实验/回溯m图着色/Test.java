@@ -1,7 +1,7 @@
 package 算法实验.回溯m图着色;
 
 import java.io.BufferedInputStream;
-import java.io.BufferedReader;
+
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
@@ -11,15 +11,6 @@ import java.util.StringTokenizer;
  * @author hjy
  * @create 2017/11/26
  **/
-
-/**
- 5 4
- 0 1 1 1 0
- 1 0 1 1 1
- 1 1 0 1 0
- 1 1 1 0 1
- 0 1 0 1 0
- */
 public class Test {
 
     static int[][] arr;  //邻接矩阵
@@ -67,13 +58,13 @@ public class Test {
 
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(new BufferedInputStream(System.in));
-       // System.out.println("请输入顶点数和颜色种类数：");
+        System.out.println("请输入顶点数和颜色种类数：");
         n = sc.nextInt();
         m = sc.nextInt();
 
         arr = new int[n+1][n+1];
         color = new int[n+1];
-
+        System.out.println("请输入图：");
         //图初始化
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n; j++) {
@@ -89,3 +80,14 @@ public class Test {
         }
     }
 }
+/**
+ * 输入：
+ 5 3
+ 0 1 1 0 1
+ 1 0 1 0 1
+ 1 1 0 1 0
+ 0 0 1 0 1
+ 1 1 0 1 0
+ 输出：
+ 12
+ */

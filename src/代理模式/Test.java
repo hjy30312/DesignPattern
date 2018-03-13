@@ -46,8 +46,3 @@ class Proxy extends Subject {
 
     }
 }
-
-
-public class Test {
-
-}
